@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    const cubes = document.querySelectorAll('.grid div');
+    const score = document.querySelector('span');
     // test that the document is loaded
     // and that snake will move if keys pressed
 
     const snake = document.querySelectorAll('.snake');
 
-    // we want to test that the snake is moving if keys pressed
+    // we want to test if keys pressed work
     function isKeyPressed(yes){
         if(yes.keyCode === 38){
             alert('up');
@@ -20,6 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('down');
         }
     }
+
+    // Now we want to test that the snake moves if keys pressed
+    const width = 10;
+    let position = 0;
+    let applePos = 0;
+    let snakePos = [2, 1, 0];
+    let direction = 1;
+    let score = 0;
+    let speed = 0.5;
+    let intervalTime = 1000;
+    let interval = 0;
+
+
+
     document.addEventListener('keyup', isKeyPressed);
 
 
