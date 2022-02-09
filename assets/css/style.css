@@ -1,0 +1,26 @@
+#container1 {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.score, .time {
+    background-color: white;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 400px;
+}
+
+.grid div {
+    height: 38px;
+    width: 38px;
+    background: white;
+    border: 1px solid black;
+}
