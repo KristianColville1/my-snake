@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(interval);
 
         // reset these values from above
-        
         score = 0;
+        randomApplePos();
         direction = 1;
         scoreDisplay.innerText = score;
         intervalTime = 1000;
@@ -41,16 +41,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // Outcomes depending on the direction
     function snakeMoves(){
 
+        // Now after making snake move the next step is to give actions if snake hits any walls
+        if(
+            (snakePos[0] + width >= (width * width) && direction === width) || // bottom
+            (snakePos[0] % width === width -1 && direction === 1) || // right
+            (snakePos[0] % width === 0 && direction === -1) || // left
+            (snakePos[0] - width < 0 && direction === -width) || // top
+            cubes[snakePos[0] + direction].classList.contains('snake')
+        ){
+            return clearInterval(interval);
+        }
+
         // adding the snake to front and remove from the end
         const snakeTail = snakePos.pop();
         cubes[snakeTail].classList.remove('snake');
         snakePos.unshift(snakePos[0] + direction);
 
+        // after snake hitting walls are determind give logic to snake eating apple
+        if(cubes[snakePos[0]].classList.contains('apple')){
+            cubes[snakePos[0]].classList.remove('apple');
+            // add length to snake array for eating apple
+            cubes[snakeTail].classList.add('snake');
+            snakePos.push(snakeTail);
 
+            //create random apple then here
+            randomApplePos();
+            score++;
+            scoreDisplay.textContent = score;
+            clearInterval(interval);
+            intervalTime = intervalTime * speed;
+            interval = setInterval(snakeMoves, intervalTime);
+        }
 
         cubes[snakePos[0]].classList.add('snake');
     }
 
+    // creat the apple position at random position
+    function randomApplePos(){
+        do{
+            applePos = Math.floor(Math.random() * cubes.length);
+        } while(cubes[applePos].classList.contains('snake'));
+
+        cubes[applePos].classList.add('apple');
+    }
 
 
 
