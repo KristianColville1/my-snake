@@ -1,7 +1,7 @@
 # My Snake
 
 ## About
-This is the third of seven repositories. Each was created with the intended purpose of developing JavaScript skills. Currently, these projects are desktop-based with a final edition being completed for all screen sizes. This project is for practising game development using JavaScript in a web browser.
+This is the fourth of seven repositories. Each was created with the intended purpose of developing JavaScript skills. Currently, these projects are desktop-based with a final edition being completed for all screen sizes. This project is for practising game development using JavaScript in a web browser.
 
 I am essentially time-bound to a project deadline with Code Institute at the moment of creating these repositories, & my goal is to learn JavaScript as crazily fast as possible. I have experience with Object Orientated languages; I possess the advantage of knowing the fundamentals of 'OO' programming.
 
