@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             (snakePos[0] - width < 0 && direction === -width) || // top
             cubes[snakePos[0] + direction].classList.contains('snake')
         ){
+            alert(`Game over.. Your final score is ${score}`);
             return clearInterval(interval);
         }
 
@@ -67,6 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
             //create random apple then here
             randomApplePos();
             score++;
+
+            // increases speed of snake depending on the score
+            if(score === 5){
+                speed = 0.85;
+                randomApplePos(); // increase number of apples on board
+            } else if(score === 10){
+                speed = 0.8;
+            } else if(score === 20){
+                speed = 0.75;
+            }
             scoreDisplay.textContent = score;
             clearInterval(interval);
             intervalTime = intervalTime * speed;
@@ -76,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cubes[snakePos[0]].classList.add('snake');
     }
 
-    // creat the apple position at random position
+    // create the apple position at random position
     function randomApplePos(){
         do{
             applePos = Math.floor(Math.random() * cubes.length);
@@ -84,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cubes[applePos].classList.add('apple');
     }
-
 
 
 
