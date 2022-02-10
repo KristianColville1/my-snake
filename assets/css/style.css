@@ -14,12 +14,12 @@ button.start-game {
     border: 4px solid grey;
     border-style: outset;
 }
+
 button.start-game:active {
     border-style: inset;
 }
 
-.score,
-.time {
+.score {
     background-color: white;
 }
 
@@ -28,13 +28,14 @@ button.start-game:active {
     flex-wrap: wrap;
     height: 400px;
     width: 400px;
+    border: 1px solid black;
 }
 
 .grid div {
-    height: 38px;
-    width: 38px;
+    height: 40px;
+    width: 40px;
     background: white;
-    border: 1px solid black;
+
 }
 
 div.snake {
@@ -42,5 +43,5 @@ div.snake {
 }
 
 div.apple {
-    background-color: palevioletred;
+    background-color: red;
 }
