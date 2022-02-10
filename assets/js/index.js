@@ -101,8 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // we want to test if keys pressed work
     // then assign direction of navigation to keys
     function isKeyPressed(yes){
-        cubes[lastIndex].classList.remove('snake');
-
         if(yes.keyCode === 38){
             // alert('up');
             direction = -width;
