@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // reset these values from above
         score = 0;
+        speed = 1;
         randomApplePos();
         direction = 1;
         scoreDisplay.innerText = score;
@@ -71,12 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // increases speed of snake depending on the score
             if(score === 5){
-                speed = 0.85;
+                speed = 0.9;
                 randomApplePos(); // increase number of apples on board
             } else if(score === 10){
-                speed = 0.8;
+                speed = 0.85;
             } else if(score === 20){
-                speed = 0.75;
+                speed = 0.8;
             }
             scoreDisplay.textContent = score;
             clearInterval(interval);
